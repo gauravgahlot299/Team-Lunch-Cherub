@@ -1,0 +1,90 @@
+actions:
+- action_search_restaurants
+- check_is_more_than_0
+- check_location
+- send_email
+- utter_ask_cuisine
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_mail_id
+- utter_ask_price
+- utter_ask_to_email
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_loc_dont_operate
+- utter_search_restaurant
+entities:
+- affirm
+- cuisine
+- goodbye
+- greet
+- is_more_than_0
+- location
+- mailID
+- mailId
+- mail_check
+- people
+- price
+intents:
+- greet
+- affirm
+- restaurant_search
+- email
+- goodbye
+- stop
+responses:
+  utter_ask_cuisine:
+  - text: What kind of cuisine would you like? Chinese/Mexican/Italian/American/South Indian/North Indian
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  utter_ask_location:
+  - text: In what location?
+  - text: In which city?
+  - text: Tell me the city please...
+  utter_ask_mail_id:
+  - text: To what email id should I send it to?
+  utter_ask_price:
+  - text: What is your average budget for two people?Lesser than Rs. 300 OR Rs. 300 to 700 OR More than 700
+  utter_ask_to_email:
+  - text: Should I send you details of all the restaurants on email?
+  utter_default:
+  - text: Sorry, i didn't get you.
+  utter_goodbye:
+  - text: Okay. Bye!
+  - text: Bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi Foodie, How can I help you!
+  - text: Hey Foodie, How is it going. How May I help you Today?
+  utter_loc_dont_operate:
+  - text: Sorry, we don’t operate in this city. Can you please specify some other
+      location
+  utter_search_restaurant:
+  - text: Sit back and Relax! We will search the top rated restaurants for you.
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+slots:
+  cuisine:
+    type: text
+  is_more_than_0:
+    type: bool
+  location:
+    type: text
+  location_check:
+    type: categorical
+    values:
+    - yes
+    - no
+    - __other__
+  mailId:
+    type: text
+  mail_check:
+    type: categorical
+    values:
+    - yes
+    - no
+    - __other__
+  price:
+    type: text
